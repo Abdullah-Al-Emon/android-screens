@@ -1,0 +1,69 @@
+@media screen and (max-width: 384px),
+screen and (max-height: 805.333px) {
+    body {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    .slider {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .slider img {
+        width: 100%;
+        min-height: calc(100vh - 146px);
+    }
+
+    .slider button:first-of-type {
+        float: left;
+    }
+
+    .slider button:last-of-type {
+        float: right;
+    }
+
+    .page {
+        position: relative;
+        text-align: right;
+        font-size: 40px;
+        height: 50px;
+        display: block;
+        background-color: aqua;
+    }
+
+    .slider button {
+        background-color: #fff;
+        color: #27ae60;
+        border: 2px solid #27ae60;
+        font-size: 12px;
+        font-weight: bold;
+        width: 50px;
+        cursor: pointer;
+        padding: 3px;
+    }
+
+    .button-div {
+        height: 48.32px;
+    }
+
+    .modal {
+        display: block;
+        width: 150px;
+        height: 75px;
+        z-index: 99;
+        border-radius: 10px;
+        padding: 20px 20px;
+        position: absolute;
+        top: 110px;
+        left: 25%;
+        text-align: center;
+        background-color: #95a5a6;
+    }
+
+    .modal .modal-text {
+        font-size: 16px;
+        color: #fff;
+    }
+}
