@@ -16,11 +16,11 @@ screen and (max-height: 805.333px) {
         min-height: calc(100vh - 146px);
     }
 
-    .slider button:first-of-type {
+    .button-div button:first-of-type {
         float: left;
     }
 
-    .slider button:last-of-type {
+    .button-div button:last-of-type {
         float: right;
     }
 
@@ -46,6 +46,7 @@ screen and (max-height: 805.333px) {
 
     .button-div {
         height: 48.32px;
+        width: 100%;
     }
 
     .modal {
