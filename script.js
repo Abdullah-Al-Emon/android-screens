@@ -12,11 +12,12 @@ function searchPageNumber(pagesArray, targetPage) {
     }
     return -1; 
 }
-
+let i = 0;
 function handleSearch() {
     const pageNumber = document.getElementById('inputValue').value;
     const number = parseInt(pageNumber);
     const foundPageIndex = searchPageNumber(images, number);
+    i = foundPageIndex;
     if (foundPageIndex !== -1) {
         document.getElementById('slide').src = images[foundPageIndex];
         document.getElementById('page').innerText = `page ${foundPageIndex + 1}`;
@@ -24,7 +25,7 @@ function handleSearch() {
         console.log(`Page ${foundPageIndex} is not found in the array.`);
     }
 }
-let i = 0;
+
 
 function mySlide(param) {
     if (param === 'next') {
@@ -42,7 +43,7 @@ function mySlide(param) {
 
 document.getElementById("slider").addEventListener("click", function (e) {
     const modal = `<div id="modal" class="modal">
-        <p id="modal-text" class="modal-text">start/left: ${e.clientX} | top: ${e.clientY}</p>
+        <p id="modal-text" class="modal-text">start/left: ${e.clientX} <br> top: ${e.clientY}</p>
     </div>`
     const rootEl = document.getElementById('modal-div')
     if (rootEl.children.length > 0) {
