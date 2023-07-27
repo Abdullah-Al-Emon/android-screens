@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class="slider">
+    <div class="slider" id="slider">
         <img src="../width_1260/page001.png" id="slide" alt="" >
     </div>
     <div class="button-div">
@@ -17,6 +17,10 @@
         <button onclick="mySlide('next');">></button>
     </div>
     <div id="page" class="page">page 1</div>
+    <div style="text-align: center;">
+        <input type="number" placeholder="Search Page Number" id="inputValue" > 
+        <button id="search-btn" onclick="handleSearch()">Search</button>
+    </div>
     <div id="modal-div"></div>
     <script src="script.js"></script>
 </body>

@@ -1,12 +1,32 @@
 let images = []
-for (let i = 1; i <= 604; i++) {
+for (let i = 1; i <= 605; i++) {
     let paddedNumber = i.toString().padStart(3, '0');
     images.push(`../width_1260/page${paddedNumber}.png`)
-    console.log(images)
+}
+
+function searchPageNumber(pagesArray, targetPage) {
+    for (let i = 0; i < pagesArray.length; i++) {
+        if (i === targetPage) {
+            return i - 1; 
+        }
+    }
+    return -1; 
+}
+
+function handleSearch() {
+    const pageNumber = document.getElementById('inputValue').value;
+    const number = parseInt(pageNumber);
+    const foundPageIndex = searchPageNumber(images, number);
+    if (foundPageIndex !== -1) {
+        document.getElementById('slide').src = images[foundPageIndex];
+        document.getElementById('page').innerText = `page ${foundPageIndex + 1}`;
+    } else {
+        console.log(`Page ${foundPageIndex} is not found in the array.`);
+    }
 }
 let i = 0;
-function mySlide(param) {
 
+function mySlide(param) {
     if (param === 'next') {
         i++;
         if (i === images.length) { i = images.length - 1; }
@@ -20,14 +40,11 @@ function mySlide(param) {
     document.getElementById('slide').src = images[i];
 }
 
-const element = document.getElementById("slide");
-element.addEventListener("click", function (e) {
-    console.log(e)
+document.getElementById("slider").addEventListener("click", function (e) {
     const modal = `<div id="modal" class="modal">
-        <p id="modal-text" class="modal-text">X: ${e.clientX} | Y: ${e.clientY}</p>
+        <p id="modal-text" class="modal-text">start/left: ${e.clientX} | top: ${e.clientY}</p>
     </div>`
     const rootEl = document.getElementById('modal-div')
-    console.log(rootEl.children)
     if (rootEl.children.length > 0) {
         rootEl.removeChild(rootEl.firstElementChild)
     }
